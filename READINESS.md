@@ -1,6 +1,6 @@
 # Readiness Report
 
-Generated from specification session on 2026-01-31.
+Last updated: 2026-02-05
 
 ## Ready for Next Phase
 
@@ -14,6 +14,37 @@ The following aspects have enough clarity to proceed:
 - **Completion model**: "Ready for next phase" rather than absolute done
 - **Output format**: Specs + readiness report
 
+## Active Exploration (WIP)
+
+New topics being explored in current session:
+
+- **Spec Loop Model** (`specs/spec-loop-model.md`)
+  - Applying "on the loop, not in the loop" to spec creation
+  - Hybrid model: autonomous mode (research, draft, evaluate) + interview mode (human input)
+  - Agent toggles between modes based on whether it can make progress alone
+
+- **Spec Backpressure** (`specs/spec-backpressure.md`)
+  - Quality gates for automated spec validation
+  - Deterministic checks (structure, ambiguity, scope test)
+  - Semi-deterministic (missing edge cases, implicit assumptions)
+  - LLM-as-judge (clarity, completeness, consistency)
+  - Human-only (domain accuracy, strategic fit)
+
+- **Assumption Validation** (`specs/assumption-validation.md`)
+  - Surfacing assumptions explicitly in specs
+  - Strategyzer Test Card / Learning Card framework
+  - Three lenses: Desirability, Feasibility, Viability
+  - Prioritization: Importance × Evidence matrix
+  - AI agents can test feasibility assumptions autonomously
+  - Decision implications: deprioritize, labs, A/B, full rollout
+
+- **Learning Loop** (`specs/learning-loop.md`)
+  - Cyclical flow: spec → build → observe → learn → decide → update spec
+  - Building as experiment (prototypes, spikes, MVPs test assumptions)
+  - Artifacts as evidence (code, benchmarks, analytics, user behavior)
+  - Decision authority: when agent decides vs. escalates to human
+  - Spec update protocol: how learnings flow back into specs
+
 ## Needs More Work
 
 The following remain open and need future sessions:
@@ -24,10 +55,16 @@ The following remain open and need future sessions:
 - **Framework adoption**: Degree of JTBD, story maps, SLC integration unclear
 - **Detailed interview flow**: Specific questions, phases, transitions not mapped
 
+## Potential Integration Points
+
+- **Beads** (steveyegge/beads): Git-backed task tracker for AI agents. Could be downstream of OpenSpcs - specs become trackable tasks for implementation.
+
 ## Recommendation
 
-The core concept is solid enough to begin exploring implementation approaches. The open questions are mostly about form and details rather than fundamental direction.
+The core concept is solid. New exploration around loop model, backpressure, and assumption validation could significantly differentiate OpenSpcs from simple "interview and write" approaches.
 
-Next session could focus on either:
+Next steps could include:
 1. Deciding form factor (which constrains many other decisions)
 2. Mapping out the interview flow in more detail
+3. Prototyping backpressure checks to see what's practical
+4. Defining how assumption validation integrates with spec structure
