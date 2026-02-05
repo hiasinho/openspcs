@@ -11,8 +11,9 @@ Design documentation for OpenSpcs, a conversational specification creation tool 
 | [backpressure](./backpressure.md) | Quality gates - deterministic checks, LLM-as-judge, and human-only validation layers |
 | [assumptions](./assumptions.md) | Scientific approach to assumptions - Test Cards, Learning Cards, D/F/V lenses |
 | [learning-loop](./learning-loop.md) | Feedback cycle - build produces evidence, learnings flow back to spec updates |
-| [observability](./observability.md) | Dashboard concept - assumption health, experiment status, trust and learning metrics |
+| [observability](./observability.md) | Tracking layer and dashboard - 4 entities (Assumption, Experiment, Evidence, Learning), gating rules, metrics |
 | [trust](./trust.md) | Autonomy gradient - how trust builds from high friction toward YOLO mode |
+| [spec-lifecycle](./spec-lifecycle.md) | **Stub** - Spec states and transitions (draft → ready → planning → building → validating) |
 
 ## Status
 
