@@ -27,4 +27,4 @@ if [[ ! -f "$SPEC_FILE" ]]; then
   exit 1
 fi
 
-cat "$PROMPT_FILE" | claude -p "Evaluate: specs/${SPEC_NAME}.md" --allowedTools "Read"
+cat "$PROMPT_FILE" | claude -p "Evaluate: specs/${SPEC_NAME}.md" --allowedTools "Read,Write" --dangerously-skip-permissions
