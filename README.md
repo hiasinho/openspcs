@@ -6,6 +6,8 @@
 
 An agent that interviews you about your project, asking targeted questions to build complete specifications before any code is written.
 
+This is **Phase Zero** — the conversation that happens before implementation. We focus only on spec creation, not the full Ralph workflow.
+
 ## Why
 
 Good specs are **critical** for autonomous coding (Ralph Wiggum loop technique). 
@@ -23,6 +25,16 @@ Garbage in → Garbage out. Vague specs → coding agents go wild.
 3. Conversation reveals gaps, clarifies requirements
 4. Agent generates structured specifications in `specs/`
 5. Specs → Implementation plan → Ralph technique for autonomous coding
+
+Specs are **living documents**. They evolve as implementation reveals new insights, outcomes differ from expectations, or scope changes.
+
+See [PRINCIPLES.md](PRINCIPLES.md) for the guiding principles behind spec creation.
+
+## Documentation
+
+- [PRINCIPLES.md](PRINCIPLES.md) — Guiding principles for spec creation
+- [PROCESS.md](PROCESS.md) — How to apply the Ralph process
+- [PLAYBOOK.md](PLAYBOOK.md) — The Ralph technique from Geoffrey Huntley
 
 ## Wish List
 
