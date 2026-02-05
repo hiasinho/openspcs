@@ -14,6 +14,10 @@ What differentiates OpenSpcs from simple "interview and write" approaches:
 
 - **Learning Loop** - Specs aren't static. Build → observe → learn → update specs. The cycle closes when evidence flows back into spec updates.
 
+- **Trust Model** - Trust starts low and builds through good outcomes. Agent earns autonomy over time, from "approve everything" to "YOLO mode." Personalized to individual preferences.
+
+- **Spec Observability** - Dashboard for spec health: assumption counts, evidence strength, experiments running, learnings captured. Make the invisible visible.
+
 ## Continue a Spec Session
 
 Start Claude Code and paste:
@@ -32,5 +36,7 @@ Study @the-ralph-playbook.md and @specs/ and @READINESS.md. Then let's continue 
     ├── spec-loop-model.md       # How spec creation runs as a loop (WIP)
     ├── spec-backpressure.md     # Quality gates for specs (WIP)
     ├── assumption-validation.md # Testing assumptions framework (WIP)
-    └── learning-loop.md         # Spec ↔ build cycle (WIP)
+    ├── learning-loop.md         # Spec ↔ build cycle (WIP)
+    ├── trust-model.md           # How trust builds over time (WIP)
+    └── spec-observability.md    # Dashboard and metrics for spec health (WIP)
 ```

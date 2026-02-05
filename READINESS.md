@@ -46,6 +46,18 @@ New topics being explored in current session:
   - Decision authority: when agent decides vs. escalates to human
   - Spec update protocol: how learnings flow back into specs
 
+- **Trust Model** (`specs/trust-model.md`)
+  - Trust gradient: high friction → YOLO mode (earned autonomy)
+  - Trust builds through good outcomes + ability to influence
+  - Personalization: different people want different control levels
+  - Fine-tuning: adjustable trust thresholds, not binary
+
+- **Spec Observability** (`specs/spec-observability.md`)
+  - Dashboard for spec health: metrics, trends, drill-down
+  - Key metrics: trust level, learning level, assumption health
+  - Visibility into experiments running, observations, learnings
+  - Data model options: embedded in specs vs. separate tracking
+
 - **Framework Adoption** (progress made)
   - Adopted: Strategyzer Test/Learning Cards, D/F/V lenses, Importance×Evidence matrix
   - Open: Degree of JTBD, story maps, SLC integration still unclear
@@ -80,4 +92,4 @@ Next steps could include:
 | Date | Topics Explored |
 |------|-----------------|
 | 2026-01-31 | Initial spec session: core purpose, entry points, spec qualities, interview style, topic scoping, completion model, output format |
-| 2026-02-05 | Loop model, backpressure, assumption validation (Strategyzer, D/F/V, Importance×Evidence), learning loop, decision authority |
+| 2026-02-05 | Loop model, backpressure, assumption validation (Strategyzer, D/F/V, Importance×Evidence), learning loop, decision authority, trust model (gradient, personalization), spec observability (dashboard, metrics) |
