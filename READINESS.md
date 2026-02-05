@@ -22,6 +22,7 @@ New topics being explored in current session:
   - Applying "on the loop, not in the loop" to spec creation
   - Hybrid model: autonomous mode (research, draft, evaluate) + interview mode (human input)
   - Agent toggles between modes based on whether it can make progress alone
+  - Partially addresses "detailed interview flow" question (see Open Questions)
 
 - **Spec Backpressure** (`specs/spec-backpressure.md`)
   - Quality gates for automated spec validation
@@ -45,6 +46,10 @@ New topics being explored in current session:
   - Decision authority: when agent decides vs. escalates to human
   - Spec update protocol: how learnings flow back into specs
 
+- **Framework Adoption** (progress made)
+  - Adopted: Strategyzer Test/Learning Cards, D/F/V lenses, Importance×Evidence matrix
+  - Open: Degree of JTBD, story maps, SLC integration still unclear
+
 ## Needs More Work
 
 The following remain open and need future sessions:
@@ -52,8 +57,7 @@ The following remain open and need future sessions:
 - **Form factor**: No decision yet on CLI vs. web vs. Claude Code skill
 - **Spec file structure**: Template vs. flexible format not decided
 - **Command/invocation naming**: /spec, /define, etc. - not chosen
-- **Framework adoption**: Degree of JTBD, story maps, SLC integration unclear
-- **Detailed interview flow**: Specific questions, phases, transitions not mapped
+- **Detailed interview flow**: Specific questions, phases, transitions not fully mapped (loop model provides high-level structure, but specific interview patterns need work)
 
 ## Potential Integration Points
 
@@ -68,3 +72,12 @@ Next steps could include:
 2. Mapping out the interview flow in more detail
 3. Prototyping backpressure checks to see what's practical
 4. Defining how assumption validation integrates with spec structure
+
+---
+
+## Session History
+
+| Date | Topics Explored |
+|------|-----------------|
+| 2026-01-31 | Initial spec session: core purpose, entry points, spec qualities, interview style, topic scoping, completion model, output format |
+| 2026-02-05 | Loop model, backpressure, assumption validation (Strategyzer, D/F/V, Importance×Evidence), learning loop, decision authority |
