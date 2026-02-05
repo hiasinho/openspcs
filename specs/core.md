@@ -50,12 +50,28 @@ Reference: Geoff's approach in videos is simple and open-ended: "This is what I 
 
 ## Topic Scoping
 
-Use the "one sentence without 'and'" test from the Ralph Playbook:
+A **topic of concern** is a single, cohesive area that can be described in one sentence without "and." How you discover topics depends on your project.
+
+### Decomposition Strategies
+
+Topics can emerge from different lenses:
+
+- **Needs-driven**: "What jobs do users need done?" (JTBD → topics)
+- **Architecture-driven**: "What are the major systems?" (subsystems → topics)
+- **Domain-driven**: "What are the core entities/resources?" (models → topics)
+- **Flow-driven**: "What are the key user journeys?" (flows → topics)
+- **Concept-driven**: "What are the distinct mechanisms?" (concepts → topics)
+
+Most projects use a mix. A Rails app might use domain-driven for models, needs-driven for features, and architecture-driven for infrastructure. The interviewer figures out which lens fits during conversation — it doesn't need to be pre-decided.
+
+### Scope Test
+
+Use the "one sentence without 'and'" test:
 
 - Can you describe the topic in one sentence without conjoining unrelated capabilities?
 - If you need "and" to describe what it does, it's probably multiple topics
 
-The LLM applies this heuristic organically and decides when to split topics into separate specs.
+This test is universal regardless of which decomposition strategy produced the topic. The LLM applies this heuristic organically and decides when to split topics into separate specs.
 
 ## Completion
 
