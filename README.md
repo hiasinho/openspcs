@@ -24,6 +24,13 @@ Garbage in → Garbage out. Vague specs → coding agents go wild.
 4. Agent generates structured specifications in `specs/`
 5. Specs → Implementation plan → Ralph technique for autonomous coding
 
+## Wish List
+
+*Aspirational features - not necessarily v1, but worth capturing:*
+
+- **AI-driven collaboration:** Interactive discussions and interviews with AI to create specifications. The agent asks questions, dives deeper, and helps uncover gaps in thinking.
+- **Collaborative commenting:** Ability to include others in the discussion who can review and comment on specifications.
+
 ## References
 
 ### Ralph Wiggum Technique (Autonomous Coding)
