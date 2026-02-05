@@ -103,6 +103,6 @@ How does the agent know trust level is increasing?
 
 ## Related
 
-- [Spec Loop Model](./spec-loop-model.md) - When agent asks vs. works autonomously
+- [Loop Model](./loop-model.md) - When agent asks vs. works autonomously
 - [Learning Loop](./learning-loop.md) - How good outcomes build trust
-- [Spec Observability](./spec-observability.md) - Trust level as a visible metric
+- [Observability](./observability.md) - Trust level as a visible metric

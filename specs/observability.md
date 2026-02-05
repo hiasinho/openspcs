@@ -135,9 +135,9 @@ Chronological list of learnings with links to source:
 
 | Date | Learning | Source | Applied to |
 |------|----------|--------|------------|
-| 2026-02-05 | Trust threshold varies by person | Discussion | trust-model.md |
+| 2026-02-05 | Trust threshold varies by person | Discussion | trust.md |
 | 2026-02-05 | Learning loop more important than perfect backpressure | Discussion | learning-loop.md |
-| 2026-02-03 | Ambiguity detection easier than completeness | Experiment | spec-backpressure.md |
+| 2026-02-03 | Ambiguity detection easier than completeness | Experiment | backpressure.md |
 
 ## Data Model
 
@@ -183,7 +183,7 @@ Core info in specs, but indexes/caches generated for dashboard. Learning Cards a
 
 ## Related
 
-- [Assumption Validation](./assumption-validation.md) - Source of assumption data
+- [Assumptions](./assumptions.md) - Source of assumption data
 - [Learning Loop](./learning-loop.md) - Source of learning data
-- [Trust Model](./trust-model.md) - Trust level as a key metric
-- [Spec Backpressure](./spec-backpressure.md) - Quality gates to display
+- [Trust](./trust.md) - Trust level as a key metric
+- [Backpressure](./backpressure.md) - Quality gates to display

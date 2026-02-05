@@ -86,5 +86,5 @@ Fail → feedback provided → refine → re-evaluate
 
 ## Related
 
-- [Spec Loop Model](./spec-loop-model.md) - How backpressure fits into the loop
-- [Assumption Validation](./assumption-validation.md) - Testing assumptions is another form of backpressure
+- [Loop Model](./loop-model.md) - How backpressure fits into the loop
+- [Assumptions](./assumptions.md) - Testing assumptions is another form of backpressure

@@ -28,15 +28,6 @@ Study @the-ralph-playbook.md and @specs/ and @READINESS.md. Then let's continue 
 
 ## Files
 
-```
-├── the-ralph-playbook.md        # Source material, the workflow this is based on
-├── READINESS.md                 # What's ready, what needs work
-└── specs/
-    ├── openspcs-core.md         # Core concept and purpose
-    ├── spec-loop-model.md       # How spec creation runs as a loop (WIP)
-    ├── spec-backpressure.md     # Quality gates for specs (WIP)
-    ├── assumption-validation.md # Testing assumptions framework (WIP)
-    ├── learning-loop.md         # Spec ↔ build cycle (WIP)
-    ├── trust-model.md           # How trust builds over time (WIP)
-    └── spec-observability.md    # Dashboard and metrics for spec health (WIP)
-```
+- [specs/](./specs/README.md) - Design documentation
+- [READINESS.md](./READINESS.md) - What's ready, what needs work
+- [the-ralph-playbook.md](./the-ralph-playbook.md) - Source material, the workflow this is based on

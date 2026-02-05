@@ -72,5 +72,5 @@ Spec meets quality criteria → done (for now)
 
 ## Related
 
-- [Spec Backpressure](./spec-backpressure.md) - Quality gates for autonomous evaluation
-- [Assumption Validation](./assumption-validation.md) - Testing assumptions as part of the loop
+- [Backpressure](./backpressure.md) - Quality gates for autonomous evaluation
+- [Assumptions](./assumptions.md) - Testing assumptions as part of the loop

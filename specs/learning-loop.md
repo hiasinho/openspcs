@@ -178,6 +178,6 @@ When learnings flow back to specs:
 
 ## Related
 
-- [Assumption Validation](./assumption-validation.md) - What to test and how to prioritize
-- [Spec Backpressure](./spec-backpressure.md) - Quality gates for updated specs
-- [Spec Loop Model](./spec-loop-model.md) - How updates happen in the spec phase
+- [Assumptions](./assumptions.md) - What to test and how to prioritize
+- [Backpressure](./backpressure.md) - Quality gates for updated specs
+- [Loop Model](./loop-model.md) - How updates happen in the spec phase

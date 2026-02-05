@@ -18,20 +18,20 @@ The following aspects have enough clarity to proceed:
 
 New topics being explored in current session:
 
-- **Spec Loop Model** (`specs/spec-loop-model.md`)
+- **Spec Loop Model** (`specs/loop-model.md`)
   - Applying "on the loop, not in the loop" to spec creation
   - Hybrid model: autonomous mode (research, draft, evaluate) + interview mode (human input)
   - Agent toggles between modes based on whether it can make progress alone
   - Partially addresses "detailed interview flow" question (see Open Questions)
 
-- **Spec Backpressure** (`specs/spec-backpressure.md`)
+- **Spec Backpressure** (`specs/backpressure.md`)
   - Quality gates for automated spec validation
   - Deterministic checks (structure, ambiguity, scope test)
   - Semi-deterministic (missing edge cases, implicit assumptions)
   - LLM-as-judge (clarity, completeness, consistency)
   - Human-only (domain accuracy, strategic fit)
 
-- **Assumption Validation** (`specs/assumption-validation.md`)
+- **Assumption Validation** (`specs/assumptions.md`)
   - Surfacing assumptions explicitly in specs
   - Strategyzer Test Card / Learning Card framework
   - Three lenses: Desirability, Feasibility, Viability
@@ -46,13 +46,13 @@ New topics being explored in current session:
   - Decision authority: when agent decides vs. escalates to human
   - Spec update protocol: how learnings flow back into specs
 
-- **Trust Model** (`specs/trust-model.md`)
+- **Trust Model** (`specs/trust.md`)
   - Trust gradient: high friction → YOLO mode (earned autonomy)
   - Trust builds through good outcomes + ability to influence
   - Personalization: different people want different control levels
   - Fine-tuning: adjustable trust thresholds, not binary
 
-- **Spec Observability** (`specs/spec-observability.md`)
+- **Spec Observability** (`specs/observability.md`)
   - Dashboard for spec health: metrics, trends, drill-down
   - Key metrics: trust level, learning level, assumption health
   - Visibility into experiments running, observations, learnings
