@@ -106,3 +106,13 @@ How does the agent know trust level is increasing?
 - [Loop Model](./loop-model.md) - When agent asks vs. works autonomously
 - [Learning Loop](./learning-loop.md) - How good outcomes build trust
 - [Observability](./observability.md) - Trust level as a visible metric
+
+## Review
+
+**YOLO mode contradicts the rest of the spec set.** Trust level "YOLO" says the agent "ships specs, human reviews async (or not at all)." But spec-lifecycle says "The human decides. Always." and agent-model says specs are the product of human-agent conversation with the human present. These are fundamentally incompatible. Either YOLO mode doesn't apply to spec writing (only to implementation), or the other specs need to accommodate it. This is the biggest cross-spec contradiction in the set.
+
+**The concept is sound but feels disconnected.** Trust as a concept makes sense — it maps well to Claude Code's own permission model. But four other specs reference trust without trust having a data model or mechanism. Observability's dashboard displays trust level, but trust.md has no way to calculate it. The open questions (persistence, per-project vs. global, regression) are all implementation questions that can't be answered without knowing the form this takes.
+
+**Scope question: is this about the speccing tool or the built product?** The trust gradient described here (approve everything → YOLO) reads like it applies to the full Ralph workflow — planning and building too. But OpenSpcs only covers the spec phase. If trust is OpenSpcs-scoped, it's really just about how much the interviewer agent asks vs. assumes. If it's broader, it belongs in the playbook, not in an OpenSpcs spec.
+
+**Still Draft status — that's accurate.** This is the least developed spec and the status reflects it honestly.

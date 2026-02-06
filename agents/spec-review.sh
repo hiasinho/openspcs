@@ -17,6 +17,6 @@ if [[ ! -f "$PROMPT_FILE" ]]; then
 fi
 
 echo "Running spec review..."
-cat "$PROMPT_FILE" | claude -p --allowedTools "Read,Write,Edit,Glob,Grep" --dangerously-skip-permissions
+cat "$PROMPT_FILE" | claude --dangerously-skip-permissions
 echo ""
 echo "Done. Review notes written into specs."

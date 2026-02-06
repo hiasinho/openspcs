@@ -47,3 +47,11 @@ See [agent-model](./agent-model.md) for how the review agent works.
 - [Observability](./observability.md) — gating rules that fire at draft → ready
 - [Agent Model](./agent-model.md) — spec review agent, interactive vs. headless modes
 - [Loop Model](./loop-model.md) — the bigger cycle that moves specs back to draft
+
+## Review
+
+**Tight and well-scoped.** Two states, human decides, review agent annotates. This is one of the cleanest specs in the set.
+
+**Spec Review section accurately describes what exists.** The description of the review agent matches agent-model.md and the actual implementation in `agents/spec-review.sh`. The "agent-to-agent context" framing is clear.
+
+**Contradicted by trust.md's YOLO mode.** This spec says "The human. Always." for who decides transitions. Trust.md's YOLO level says the agent "ships specs, human reviews async (or not at all)." These can't both be true. This spec's position is more consistent with the rest of the spec set.

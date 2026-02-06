@@ -52,3 +52,9 @@ This is where Ralph's "on the loop" principle actually applies: the human observ
 - [Core](./core.md) — What the conversation produces
 - [Learning Loop](./learning-loop.md) — How evidence flows back from building
 - [Agent Model](./agent-model.md) — Interactive vs. headless modes
+
+## Review
+
+This spec is clean. The conversation-vs-loop distinction is one of the clearest ideas in the spec set and it holds up well. The table contrasting building vs. speccing is particularly useful.
+
+**One minor tension with assumptions.md.** The assumptions spec's "Integration with Spec Loop" diagram shows a mini-loop within the spec phase where "Agent runs testable experiments (feasibility) → Learning Cards → Spec refined OR assumption flagged → Loop until critical assumptions validated." This reads like an automated loop inside the speccing conversation, which sits oddly against this spec's assertion that speccing is a conversation, not a loop. Worth clarifying: is agent-driven feasibility testing (e.g., searching codebase, testing an API) just part of the conversation flow, or is it a separate iterative process?

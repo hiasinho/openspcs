@@ -135,3 +135,13 @@ This turns specs from "build instructions" into "investment theses with validati
 
 - [Loop Model](./loop-model.md) - Assumption validation as part of the loop
 - [Observability](./observability.md) - Gating rules for unvalidated assumptions
+
+## Review
+
+**Framework is solid.** Test Cards, Learning Cards, D/F/V lenses, and the prioritization matrix are clear and actionable. The "What AI Agents Can Test" vs. "What Needs Human Testing" tables are particularly useful — they directly inform the conversation flow.
+
+**"Integration with Spec Loop" diagram implies an inner loop.** The diagram shows "Agent runs testable experiments → Learning Cards → Spec refined → Loop until critical assumptions validated." This reads as an automated iterative process within the speccing phase, but loop-model.md insists speccing is a conversation, not a loop. The agent doing feasibility research (searching codebase, reading docs) is clearly just conversation flow. But "loop until validated" suggests something more structured. Clarifying this would resolve a tension with loop-model.
+
+**Overlap with observability on what a spec should contain.** The "What This Means for Specs" section lists six things a spec could include (assumptions, evidence level, importance rating, test plan, release strategy, instrumentation). Observability defines overlapping entity fields (Assumption with importance, status; Evidence with strength, direction). Neither spec clearly owns the "what goes in a spec file" question — assumptions.md describes it narratively, observability.md defines it as database entities. These should point at each other more explicitly.
+
+**Open questions are partially answered.** "Should assumption validation be a separate phase or integrated into spec drafting?" — loop-model answers this (it's part of the conversation, not a phase). "How do we track assumptions across multiple specs?" — observability's data model handles this (Assumption entity has a `spec` field).

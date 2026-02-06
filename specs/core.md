@@ -125,3 +125,15 @@ To be decided in future sessions:
 - [The Ralph Playbook](../the-ralph-playbook.md) - source material for workflow concepts
 - Geoffrey Huntley's Ralph approach and videos
 - Clayton Farr's enhancements documentation
+
+## Review
+
+**Form factor is answered elsewhere.** Agent-model.md has decided: it's Claude Code, interactive + headless. But core.md still lists form factor as an open question. The open questions section needs a pass — some are answered, some may no longer matter.
+
+**"Readiness report" output is orphaned.** Core lists a "readiness report" as an output alongside `specs/*.md`, but no other spec defines this artifact. Spec-lifecycle has draft ⇄ ready states, and the spec review agent writes `## Review` sections — but neither produces a standalone readiness report. Either define what this is or drop it.
+
+**Spec template question has a de facto answer.** The open question about "consistent template vs. content-driven format" — the existing specs already demonstrate the answer: content-driven, no rigid template. The playbook also says "no pre-specified template." This could be closed.
+
+**Interview style is solid.** The clarity spectrum (freeform → structured) and adaptive approach are well-defined and consistent with the playbook and loop-model's description of in-session conversation flow.
+
+**Topic scoping is solid.** Multiple decomposition strategies + the "one sentence without and" test are clear and practical. Consistent with the playbook's treatment of topics of concern.

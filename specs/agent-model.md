@@ -97,3 +97,13 @@ All three phases use the same underlying mechanism — Claude Code, interactive 
 - [Spec Lifecycle](./spec-lifecycle.md) — Draft ⇄ ready, review agent's role in transitions
 - [Loop Model](./loop-model.md) — Spec creation as conversation, learning as loop
 - [Learning Loop](./learning-loop.md) — How evidence flows back from building
+
+## Review
+
+**Solid and well-grounded.** Two modes, one agent, clear write boundary. This is the most concrete spec — it describes what actually exists and works today.
+
+**Doesn't mention the spec agent.** There's an `agents/spec.sh` + `agents/prompts/spec.md` that provides a pre-seeded interactive session kickoff. Agent-model only describes the spec review agent as the headless agent but doesn't describe this interactive-mode helper. It's a small gap — the spec agent is just a convenience for starting interactive sessions, not a separate mode — but it's part of the agent architecture.
+
+**Write permissions table could mention `## Review` more precisely.** The table says the spec review agent writes "Spec review notes (`## Review`)" which is correct. But the description says "headless agents never touch specs" in the paragraph above, then the table shows the review agent writing into spec files. The nuance (content vs. annotation) is explained, but the initial blanket statement is slightly misleading on first read.
+
+**"Relationship to Ralph Phases" is forward-looking.** It describes Phase 2 (planning agent) and Phase 3 (building loop) which don't exist in this project yet. These are Ralph workflow components, not OpenSpcs components. Worth noting that OpenSpcs only covers Phase 1.

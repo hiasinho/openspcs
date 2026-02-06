@@ -170,3 +170,13 @@ When learnings flow back to specs:
 - [Assumptions](./assumptions.md) - What to test and how to prioritize
 - [Observability](./observability.md) - Gating rules for blind spots
 - [Loop Model](./loop-model.md) - How updates happen in the spec phase
+
+## Review
+
+**Strong spec.** The full cycle diagram, building-as-experiment table, and decision authority breakdown are all clear and well-connected to other specs.
+
+**Spec Update Protocol step 4 references gating that doesn't trigger here.** Step 4 says "Check for blind spots — Any high-importance assumptions without evidence? (see observability gating)." But observability's gating rules fire at two specific moments: draft → ready transitions and implementation planning. The learning-loop's spec update protocol happens during interactive sessions when learnings flow back — that's neither transition. The gating reference implies it should fire here too, but observability doesn't define that trigger.
+
+**"Integration with Other Specs" table references a spec that doesn't exist.** The table lists "Assumption Validation" as a separate spec, but the actual spec is called `assumptions.md` (titled "Assumption Validation"). Minor naming inconsistency — the link in "Related" correctly points to `./assumptions.md`.
+
+**Open questions overlap with observability.** "How do we track which assumptions have been tested across cycles?" — observability's data model answers this (Assumption entity with status field). "How do we prevent learning debt?" — observability's Learning entity with `applied: bool` tracks this. These open questions may already be answered.

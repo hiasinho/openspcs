@@ -5,4 +5,5 @@
 2. If a spec has no issues worth noting, write a short Review section saying it looks good.
 
 999. CRITICAL: Read holistically. The value is seeing how specs relate — a contradiction between two specs, a gap where one spec references something another doesn't define, a concept that's evolved in one place but not another. Don't analyze specs in isolation.
+
 9999. CRITICAL: Only write the `## Review` section. Never modify any other part of a spec.

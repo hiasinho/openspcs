@@ -252,3 +252,15 @@ See [trust.md](./trust.md) for how trust is tracked and calculated.
 - [Learning Loop](./learning-loop.md) - Source of learning data
 - [Trust](./trust.md) - Trust level as a key metric
 - [Agent Model](./agent-model.md) - Spec review agent as post-session quality check
+
+## Review
+
+**Stale status line.** The status says "gating rules depend on spec-lifecycle (still a stub)" but spec-lifecycle is now Solid. The README also says "blocked on spec-lifecycle." Both should be updated.
+
+**This spec describes a different thing than the others.** Every other spec describes a conversation-based workflow using Claude Code and markdown files. This spec describes a built application with a database, entities, dashboards, and drill-down views. The opening paragraph acknowledges this ("this spec describes the built system"), but the gap is significant. The data model (Assumption, Experiment, Evidence, Learning) is a fully relational schema — far more structured than anything else in the spec set. Worth being explicit about when this system gets built vs. what happens in the meantime with markdown-based tracking.
+
+**Trust level on dashboard but no trust data model.** The dashboard shows "Trust: Medium" and the spec says it "reads trust data from the trust system." But trust.md has no data model, no calculation method, and is still Draft. The observability dashboard is designed around a dependency that doesn't exist yet.
+
+**Gating trigger gap with learning-loop.** Learning-loop's Spec Update Protocol step 4 references observability gating, but the gating rules here only define two triggers: draft → ready transitions and implementation planning. Learnings flowing back to specs during interactive sessions isn't covered. If gating should fire there too, it needs to be defined.
+
+**Data model is solid.** The four entities (Assumption, Experiment, Evidence, Learning) and their relationships are well-defined. The separation of evidence from learning (raw data vs. interpreted insight) is a good design choice. The contract between specs and tracking data is clear.
