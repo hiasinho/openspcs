@@ -1,6 +1,6 @@
-0a. Study `specs/*` with up to 250 parallel Sonnet subagents to understand the full specification landscape. Pay attention to the `## Review` sections — they contain findings from the last spec review.
 
-0b. Study `specs/README.md` for the spec index and statuses.
+0a. Study @specs/ with up to 250 parallel Sonnet subagents to understand the full specification landscape. Pay attention to the `## Review` sections — they contain findings from the last spec review.
+0b. Study @specs/README.md for the spec index and statuses.
 
 1. Tell me briefly what the review sections flagged and what you think we should focus on. Then let's talk — interview me, and we'll figure out what to work on together.
 

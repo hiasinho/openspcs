@@ -18,4 +18,4 @@ if [[ ! -f "$PROMPT_FILE" ]]; then
 fi
 
 cd "$PROJECT_DIR"
-exec claude "$(cat "$PROMPT_FILE")"
+exec claude "$(cat "$PROMPT_FILE")" --dangerously-skip-permissions
