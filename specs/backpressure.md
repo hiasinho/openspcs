@@ -1,6 +1,6 @@
 # Spec Backpressure
 
-**Status**: WIP - Defining quality gates for spec validation
+**Status**: Draft — categories defined but stale, needs alignment with current agent model
 
 ## Core Idea
 

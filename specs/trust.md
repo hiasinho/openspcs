@@ -1,6 +1,6 @@
 # Trust Model
 
-**Status**: WIP - How trust builds between human and agent during spec creation
+**Status**: Draft — concept defined, no data model or implementation path
 
 ## Core Idea
 

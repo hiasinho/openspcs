@@ -1,6 +1,6 @@
 # Learning Loop
 
-**Status**: WIP - The cyclical flow from specs through building back to specs based on evidence
+**Status**: Solid — cycle defined, decision authority clarified
 
 ## Core Idea
 
@@ -87,39 +87,28 @@ The "Decisions" step is where the loop closes - learnings become spec updates.
 
 ## Decision Authority
 
-Not all decisions require human involvement. Define who decides based on:
+When learnings flow back from building, the human and agent discuss them in an interactive session. The agent may propose spec updates directly — the human is present and can steer or override.
 
-### Agent Can Decide Autonomously
+Some updates are straightforward enough that the agent can just make them during the conversation:
 
-| Situation | Example | Agent action |
-|-----------|---------|--------------|
-| Feasibility confirmed | "API supports batch requests" | Update spec to use batch |
-| Feasibility refuted | "Library doesn't handle edge case" | Update spec with workaround |
-| Performance validated | "Benchmark shows <100ms" | Mark assumption validated |
-| Pattern discovered | "Found existing utility" | Update spec to use it |
-| Clear pass/fail on criteria | "Tests pass" | Mark assumption validated |
+| Situation | Example |
+|-----------|---------|
+| Feasibility confirmed | "API supports batch requests" → update spec to use batch |
+| Feasibility refuted | "Library doesn't handle edge case" → update spec with workaround |
+| Performance validated | "Benchmark shows <100ms" → mark assumption validated |
+| Clear pass/fail | "Tests pass" → note the evidence |
 
-Criteria for agent autonomy:
-- Evidence is unambiguous (clear pass/fail)
-- Update is within original intent
-- No strategic/business judgment needed
-- No scope or priority change
+Others need the human to decide:
 
-### Human Must Decide
+| Situation | Example |
+|-----------|---------|
+| Ambiguous evidence | "Some users liked it, some didn't" |
+| Scope change | "This is bigger than expected" |
+| Pivot or persist | "Metrics are mediocre" |
+| User/market insight | "Users want different thing" |
+| Business model impact | "Margins worse than expected" |
 
-| Situation | Example | Why human needed |
-|-----------|---------|------------------|
-| Ambiguous evidence | "Some users liked it, some didn't" | Judgment call |
-| Scope change | "This is bigger than expected" | Priority decision |
-| Pivot or persist | "Metrics are mediocre" | Strategic direction |
-| User/market insight | "Users want different thing" | Product decision |
-| Business model impact | "Margins worse than expected" | Viability judgment |
-
-Criteria for human escalation:
-- Evidence is ambiguous or mixed
-- Decision changes scope, priority, or direction
-- Business/strategic judgment required
-- Multiple valid interpretations exist
+This isn't about agent autonomy vs. human control — it all happens in conversation. The distinction is just: does the agent need to ask, or can it go ahead because the answer is obvious?
 
 ## Spec Update Protocol
 

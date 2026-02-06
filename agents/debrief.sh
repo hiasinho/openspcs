@@ -2,12 +2,12 @@
 set -euo pipefail
 
 SCRIPT_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
-PROMPT_FILE="$SCRIPT_DIR/prompts/consistency-check.md"
+PROMPT_FILE="$SCRIPT_DIR/prompts/debrief.md"
 
 if [[ "${1:-}" == "--help" || "${1:-}" == "-h" ]]; then
   echo "Usage: $(basename "$0")"
   echo ""
-  echo "Check for contradictions across specs."
+  echo "Post-session debrief. Reads all specs, writes tracking/debrief.md."
   exit 0
 fi
 
@@ -16,6 +16,7 @@ if [[ ! -f "$PROMPT_FILE" ]]; then
   exit 1
 fi
 
-echo "Running consistency check across specs..."
+echo "Running debrief..."
 cat "$PROMPT_FILE" | claude -p --allowedTools "Read,Write,Glob,Grep" --dangerously-skip-permissions
-echo "Done. See tracking/contradictions.md"
+echo ""
+echo "Done. See tracking/debrief.md"

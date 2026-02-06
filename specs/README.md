@@ -4,18 +4,16 @@ Design documentation for OpenSpcs, a conversational specification creation tool 
 
 ## Specs
 
-| Spec | Purpose |
-|------|---------|
-| [core](./core.md) | Foundation - what OpenSpcs does, interview style, spec qualities, output format |
-| [loop-model](./loop-model.md) | Autonomous loop model - agent researches/drafts/self-evaluates, surfaces questions for knowledge gaps |
-| [backpressure](./backpressure.md) | Quality gates - deterministic checks, LLM-as-judge, and human-only validation layers |
-| [assumptions](./assumptions.md) | Scientific approach to assumptions - Test Cards, Learning Cards, D/F/V lenses |
-| [learning-loop](./learning-loop.md) | Feedback cycle - build produces evidence, learnings flow back to spec updates |
-| [observability](./observability.md) | Tracking layer and dashboard - 4 entities (Assumption, Experiment, Evidence, Learning), gating rules, metrics |
-| [trust](./trust.md) | Autonomy gradient - how trust builds from high friction toward YOLO mode |
-| [agent-model](./agent-model.md) | What "the agent" is - CC in two modes (interactive + headless), utility agents, supervisor pattern |
-| [spec-lifecycle](./spec-lifecycle.md) | **Stub** - Spec states and transitions (draft → ready → planning → building → validating) |
+| Spec | Status | Purpose |
+|------|--------|---------|
+| [core](./core.md) | Solid | Foundation — what OpenSpcs does, interview style, spec qualities, output format |
+| [agent-model](./agent-model.md) | Solid | What "the agent" is — interactive + headless modes, one debrief agent |
+| [loop-model](./loop-model.md) | Solid | Spec creation as conversation, learning as a bigger loop around building |
+| [learning-loop](./learning-loop.md) | Solid | Feedback cycle — build produces evidence, learnings flow back to specs |
+| [assumptions](./assumptions.md) | Solid | Framework for assumptions — Test Cards, Learning Cards, D/F/V lenses |
+| [observability](./observability.md) | Solid | Tracking layer — 4 entities, gating rules, metrics (blocked on spec-lifecycle) |
+| [backpressure](./backpressure.md) | Draft | Quality gates — categories defined but stale, needs alignment |
+| [trust](./trust.md) | Draft | Autonomy gradient — concept defined, no data model yet |
+| [spec-lifecycle](./spec-lifecycle.md) | Draft | Spec states and transitions — stub |
 
-## Status
-
-All specs are currently **WIP** (work in progress).
+Statuses: **Draft** (still finding the shape) → **Solid** (core decisions made) → **Ready** (good enough to build from)

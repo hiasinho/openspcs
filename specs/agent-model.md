@@ -1,6 +1,6 @@
 # Agent Model
 
-**Status**: WIP - Defining what "the agent" means across all OpenSpcs specs
+**Status**: Solid — two modes defined, one debrief agent, write boundary clear
 
 ## Core Idea
 
@@ -16,92 +16,67 @@ A human opens Claude Code and has a conversation. This is the speccing session �
 
 - Human in the loop — that's the point
 - Conversational, adaptive (see interview style in [core](./core.md))
-- Human drives mode switches ("study this", "interview me", "update the spec", "any gaps?")
+- Human drives ("study this", "interview me", "update the spec", "any gaps?")
+- Within a session, the agent may research, draft, or self-check without being asked — that's just part of the conversation flow, not a separate mode
 - Domain knowledge flows in through dialogue
-- Decisions happen here
-
-This is the **interview mode** from the [loop model](./loop-model.md).
+- Specs are the output
 
 ### Headless Mode
 
 Claude Code invoked with `claude -p`. No human interaction. A script pipes a prompt, the agent does a specific job, returns results.
 
-- No human needed
+- No human present
 - Single-purpose — one job per agent
 - Invoked via shell scripts with prompt files
-- Composable and orchestratable
-
-This is the **autonomous mode** from the [loop model](./loop-model.md).
+- Writes tracking data only, never specs
 
 ## Headless Agents
 
-### Utility Agents
+### Debrief Agent
 
-Each utility agent does one well-defined job:
+One agent, one job: after a speccing session, read all specs and produce a debrief for the next session.
 
-| Agent | Job |
-|-------|-----|
-| **spec-check** | Quality gate — structure, ambiguity, dangling references, gaps |
-| **extract-assumptions** | Surface assumptions from spec content into the tracker |
-| **check-assumptions** | Check if existing assumptions have gained new evidence |
-| **gap-analysis** | Find missing coverage across specs |
-| **consistency-check** | Detect cross-spec contradictions |
+Pattern: `agents/debrief.sh` + `agents/prompts/debrief.md` — shell script pipes a prompt to `claude -p`, agent reads all specs, writes `tracking/debrief.md`.
 
-Each follows the same pattern: shell script validates inputs, pipes a prompt file to `claude -p`, agent reads relevant files, does its job, writes output.
+The debrief covers:
+- What's in good shape
+- What's not — contradictions, gaps, issues, in one prioritized list
+- Suggested focus for next session
 
-This list isn't fixed. New utility agents get added as needs emerge.
-
-### Supervisor Agent
-
-Orchestrates utility agents after an interactive speccing session:
-
-1. Determines which utility agents to run
-2. Runs them (possibly in parallel)
-3. Collects results
-4. Synthesizes findings into a post-session report
-
-The supervisor is itself a headless Claude Code invocation that calls other headless invocations.
+That's it. No separate agents for assumptions, gaps, contradictions, consistency. One holistic read, one file.
 
 ## Post-Session Flow
-
-The key workflow this model enables: after each interactive speccing session, automated processing runs to surface what the next session should address.
 
 ```
 Interactive session (human + CC)
     ↓ session ends
-Supervisor agent (headless)
-    ├── spec-check (per modified spec)
-    ├── extract-assumptions
-    ├── check-assumptions
-    ├── gap-analysis
-    └── consistency-check
+Debrief agent (headless)
     ↓
-Findings + tracking updates
+tracking/debrief.md
     ↓
-Next interactive session (informed by findings)
+Next interactive session (informed by debrief)
 ```
-
-This is the **spec-phase equivalent of the building loop's backpressure**. The building loop has tests, lints, and type checks that reject bad work. The spec phase gets a post-session agent that surfaces what needs attention.
 
 ## Write Permissions
 
-What agents can and cannot modify directly:
+Specs are the product of a conversation between the human and Claude Code in interactive mode. The agent writes spec content as part of that collaboration — the human is present, steering, approving. That's not "an agent writing specs" — that's a conversation producing specs.
 
-| Target | Agents write directly? | Rationale |
-|--------|------------------------|-----------|
-| Tracking data (assumptions, evidence, status) | Yes | Metadata about specs, not decisions |
-| Findings / reports | Yes | Observations and suggestions, not changes |
-| Specs | No — goes through human | Specs represent decisions; human reviews and applies |
+Headless agents never touch specs. They write tracking data only.
 
-This aligns with the [trust model](./trust.md): start with a clear boundary where agents don't touch specs, potentially relax as trust builds.
+| Target | Who writes | Context |
+|--------|-----------|---------|
+| Specs | Interactive Claude Code | Human present, collaborative — this is the conversation |
+| Tracking data (debrief, reports) | Headless agents | Post-session analysis, no human needed |
+
+This is a clear boundary, not a trust gradient. Interactive sessions produce specs. Headless agents produce analysis.
 
 ## Relationship to Ralph Phases
 
 ```
 Phase 1: Define Requirements (this is where OpenSpcs lives)
 ├── Interactive: speccing sessions (human + CC)
-├── Headless: post-session agents (supervisor + utilities)
-└── Output: specs + tracking data
+├── Headless: debrief agent
+└── Output: specs + debrief
 
 Phase 2: Planning
 ├── Headless: implementation planning agent
@@ -116,18 +91,11 @@ All three phases use the same underlying mechanism — Claude Code, interactive 
 
 ## Open Questions
 
-- How does the supervisor decide which utility agents to run? Always all of them, or based on what changed in the session?
-- Can utility agents invoke other agents, or does only the supervisor compose?
-- What happens when a utility agent fails? Does the supervisor continue with the rest?
-- Which model should headless agents use? (Fast model for simple checks, stronger model for judgment calls?)
-- Should the supervisor be able to flag something so urgent it triggers an immediate interactive follow-up?
-- How does the post-session flow get triggered? Manually by the user, or automatically (e.g., git hook on spec changes)?
+- How does the post-session debrief get triggered? Manually by the user, or automatically?
+- Which model should the debrief agent use?
 
 ## Related
 
 - [Core](./core.md) — What the interactive session produces
-- [Loop Model](./loop-model.md) — Interactive = interview mode, headless = autonomous mode
-- [Backpressure](./backpressure.md) — Utility agents are the backpressure mechanism for specs
-- [Trust](./trust.md) — Write permissions follow the trust gradient
-- [Observability](./observability.md) — Tracking data that agents maintain
-- [Assumptions](./assumptions.md) — Extract and check agents handle assumption lifecycle
+- [Loop Model](./loop-model.md) — Spec creation as conversation, learning as loop
+- [Learning Loop](./learning-loop.md) — How evidence flows back from building

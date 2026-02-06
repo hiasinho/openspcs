@@ -1,6 +1,6 @@
 # Spec Observability
 
-**Status**: WIP - Making spec state visible through metrics and dashboards
+**Status**: Solid — data model complete, gating rules depend on spec-lifecycle (still a stub)
 
 ## Core Idea
 

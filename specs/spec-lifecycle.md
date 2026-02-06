@@ -1,6 +1,6 @@
 # Spec Lifecycle
 
-**Status**: Stub — created because observability.md gating rules reference spec states that aren't defined anywhere.
+**Status**: Draft — stub, needs states and transitions defined
 
 ## Why This Spec Exists
 

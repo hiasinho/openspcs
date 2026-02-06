@@ -1,76 +1,54 @@
 # Spec Loop Model
 
-**Status**: WIP - Exploring whether spec creation should follow an autonomous loop model
+**Status**: Solid — spec creation as conversation, learning loop around building
 
 ## Core Idea
 
-Apply Ralph's "on the loop, not in the loop" principle to spec creation itself.
+Spec creation is a conversation, not a loop. A human and Claude Code sit down, discuss, and produce specs. The session ends, and you have specs.
 
-In Ralph's building phase:
-- **In the loop** = doing the work yourself
-- **On the loop** = observing, tuning, steering while Ralph does the work
-
-Applied to specs:
-- **In the specs** = driving every question/answer in the interview
-- **On the specs** = agent loops autonomously while human observes and provides input when needed
-
-## Hybrid Model
-
-Spec creation has two modes that the agent toggles between:
-
-### Autonomous Mode
-
-Agent loops on:
-- **Research** - Explore codebase, read docs, analyze existing code for implicit specs
-- **Drafting** - Write/refine spec files based on gathered info
-- **Self-evaluation** - Check against spec qualities (complete, clear, testable, scoped)
-- **Gap identification** - Surface what's missing or unclear
-
-### Interview Mode
-
-Agent surfaces questions, human provides input:
-- Domain knowledge that doesn't exist anywhere else
-- Preferences and decisions
-- Validation: "Is this what you meant?"
-- Priority and scope choices
-
-## Flow
+Learning, on the other hand, IS a loop — but a much bigger one that wraps around building:
 
 ```
-Agent researches autonomously
-    ↓
-Agent drafts/refines specs
-    ↓
-Agent self-evaluates (backpressure)
-    ↓
-Gaps identified?
-    ├── Technical gaps → back to research (autonomous)
-    └── Knowledge gaps → surface questions (interview mode)
-            ↓
-        Human provides input
-            ↓
-        Back to autonomous mode
-    ↓
-Spec meets quality criteria → done (for now)
+Spec (conversation) → Build → Learn → Spec (conversation)
 ```
 
-## Key Difference from Building Loop
+This cycle takes days or weeks, not minutes. Each leg is a separate activity with its own dynamics.
 
-| Building Loop | Spec Loop |
-|---------------|-----------|
-| Feedback is code/tests (on disk) | Feedback requires human knowledge |
-| Fully autonomous between iterations | Blocks on human input for knowledge gaps |
-| Clear atomic unit: one task, one commit | Atomic unit less clear |
-| Context cleared each iteration | May need context continuity for coherent dialogue |
+## The Conversation
 
-## Open Questions
+Within an interactive speccing session, the agent naturally moves between activities:
 
-- What's the atomic unit of work in a spec loop iteration?
-- Should context be cleared between iterations, or maintained for conversation coherence?
-- How does the agent decide when to switch modes?
-- What triggers "done" - all backpressure passes + no knowledge gaps?
+- **Researching** — exploring codebase, reading docs, analyzing existing code
+- **Drafting** — writing and refining spec content
+- **Interviewing** — asking questions to fill knowledge gaps
+- **Checking** — noticing inconsistencies, gaps, vague language
+
+These aren't separate "modes" the agent toggles between. They're what a good conversation looks like. The agent researches when it needs context, asks when it needs domain knowledge, drafts when it has enough to write, and checks its own work naturally.
+
+The human steers: "study this", "interview me about X", "update the spec", "what's missing?"
+
+## The Learning Loop
+
+The bigger cycle happens across sessions and phases:
+
+1. **Spec** — Conversation produces specs with assumptions
+2. **Build** — Prototype, spike, or MVP tests those assumptions
+3. **Learn** — Building produces evidence (see [learning-loop](./learning-loop.md))
+4. **Spec again** — New conversation incorporates what was learned
+
+This is where Ralph's "on the loop" principle actually applies: the human observes what the build phase revealed and decides what needs revisiting.
+
+## Key Difference from Building
+
+| Building | Speccing |
+|----------|----------|
+| Feedback is code/tests (on disk) | Feedback is human knowledge |
+| Autonomous between iterations | Conversational — human is present |
+| Clear atomic unit: one task, one commit | Atomic unit is one session |
+| Context cleared each iteration | Context maintained within session |
 
 ## Related
 
-- [Backpressure](./backpressure.md) - Quality gates for autonomous evaluation
-- [Assumptions](./assumptions.md) - Testing assumptions as part of the loop
+- [Core](./core.md) — What the conversation produces
+- [Learning Loop](./learning-loop.md) — How evidence flows back from building
+- [Agent Model](./agent-model.md) — Interactive vs. headless modes

@@ -1,5 +1,7 @@
 # OpenSpcs Core Specification
 
+**Status**: Solid — core decisions made, form factor and spec template still open
+
 A conversational specification creation tool that interviews users to build complete specifications before implementation begins.
 
 ## What It Does

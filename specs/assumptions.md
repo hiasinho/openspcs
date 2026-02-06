@@ -1,6 +1,6 @@
 # Assumption Validation
 
-**Status**: WIP - Framework for surfacing, testing, and deciding on assumptions in specs
+**Status**: Solid — framework defined (test cards, learning cards, D/F/V lenses)
 
 ## Core Idea
 
