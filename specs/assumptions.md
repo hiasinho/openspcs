@@ -124,13 +124,6 @@ A spec could include:
 
 This turns specs from "build instructions" into "investment theses with validation plans."
 
-## Open Questions
-
-- How lightweight can this be for small features vs. how rigorous for big bets?
-- Should assumption validation be a separate phase or integrated into spec drafting?
-- What's the threshold for "enough evidence" to proceed?
-- How do we track assumptions across multiple specs?
-
 ## Related
 
 - [Loop Model](./loop-model.md) - Assumption validation as part of the loop

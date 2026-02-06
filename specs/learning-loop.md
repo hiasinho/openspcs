@@ -158,13 +158,6 @@ When learnings flow back to specs:
 
 8. **Next cycle**: Build updated version, test again
 
-## Open Questions
-
-- How do we track which assumptions have been tested across cycles?
-- What's the right granularity for learning documentation?
-- How do we prevent "learning debt" (observations not being processed)?
-- Should there be a "learning backlog" separate from implementation backlog?
-
 ## Related
 
 - [Assumptions](./assumptions.md) - What to test and how to prioritize

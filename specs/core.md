@@ -94,7 +94,6 @@ Flexible:
 ## Output
 
 - `specs/*.md` - one file per topic of concern
-- **Readiness report** - summary of what's ready and what needs more work
 
 ## Context Handling
 
@@ -106,17 +105,6 @@ When users have existing context (code, docs, URLs):
 - Focus interview on gaps and unclear areas
 
 Core principle from playbook: "Don't assume not implemented" - always analyze first.
-
----
-
-## Open Questions
-
-To be decided in future sessions:
-
-- **Form factor**: CLI tool, web interface, Claude Code skill, or combination
-- **Spec file structure**: Consistent template vs. content-driven format
-- **Command naming**: /spec, /define, /interview, or other
-- **Specific frameworks**: How much to adopt JTBD, story maps, SLC concepts from playbook enhancements
 
 ---
 

@@ -1,6 +1,6 @@
 # Spec Observability
 
-**Status**: Solid — data model complete, gating rules depend on spec-lifecycle (still a stub)
+**Status**: Solid — data model complete, gating rules defined
 
 ## Core Idea
 
