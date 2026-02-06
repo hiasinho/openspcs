@@ -54,4 +54,4 @@ See [agent-model](./agent-model.md) for how the review agent works.
 
 **Spec Review section accurately describes what exists.** The description of the review agent matches agent-model.md and the actual implementation in `agents/spec-review.sh`. The "agent-to-agent context" framing is clear.
 
-**Contradicted by trust.md's YOLO mode.** This spec says "The human. Always." for who decides transitions. Trust.md's YOLO level says the agent "ships specs, human reviews async (or not at all)." These can't both be true. This spec's position is more consistent with the rest of the spec set.
+**No contradictions with other specs.** "The human decides, always" is consistent across the spec set.

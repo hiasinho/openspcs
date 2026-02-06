@@ -151,19 +151,13 @@ All metrics are derived from tracking data.
 - Learnings applied vs. pending (applied: true vs. false)
 - Learning rate (learnings per time period)
 
-### Trust Level
-
-Displayed but not owned by this system. Trust is about the human-agent working relationship, not project knowledge state. The dashboard reads trust data from the trust system.
-
-See [trust.md](./trust.md) for how trust is tracked and calculated.
-
 ## Dashboard Concept
 
 ```
 ┌─────────────────────────────────────────────────────────────────┐
 │  OpenSpcs: [project-name]                                       │
 ├─────────────────────────────────────────────────────────────────┤
-│  Trust: Medium ████████░░    Blind spots: 3                     │
+│  Blind spots: 3                                                  │
 ├─────────────────────────────────────────────────────────────────┤
 │  Assumptions                                                    │
 │  ┌──────────────────────────────────────────────────────────┐  │
@@ -184,7 +178,6 @@ See [trust.md](./trust.md) for how trust is tracked and calculated.
 ├─────────────────────────────────────────────────────────────────┤
 │  Learnings: 2 pending                                           │
 │  ┌──────────────────────────────────────────────────────────┐  │
-│  │ • Trust threshold varies by person → applied to trust.md │  │
 │  │ • LLMs better at wrongness than missingness → pending    │  │
 │  └──────────────────────────────────────────────────────────┘  │
 └─────────────────────────────────────────────────────────────────┘
@@ -229,7 +222,6 @@ See [trust.md](./trust.md) for how trust is tracked and calculated.
 
 | Date | Learning | Evidence from | Applied to | Status |
 |------|----------|---------------|------------|--------|
-| 2026-02-05 | Trust threshold varies by person | user-interviews-round1 | trust.md | Applied |
 | 2026-02-05 | Loop model more important than perfect backpressure | Discussion | learning-loop.md | Applied |
 | 2026-02-03 | LLMs better at spotting wrongness than missingness | prototype-backpressure-v1 | — | Pending |
 
@@ -239,7 +231,6 @@ See [trust.md](./trust.md) for how trust is tracked and calculated.
 |---------|---------------------|
 | **Assumption Validation** | Assumption count, status, area breakdown, blind spots |
 | **Learning Loop** | Learnings captured, applied, velocity |
-| **Trust Model** | Trust level displayed, sourced from trust system (see [trust.md](./trust.md)) |
 | **Spec Review** | Post-session review notes written into each spec |
 
 ## Open Questions
@@ -250,7 +241,6 @@ See [trust.md](./trust.md) for how trust is tracked and calculated.
 
 - [Assumptions](./assumptions.md) - Source of assumption data
 - [Learning Loop](./learning-loop.md) - Source of learning data
-- [Trust](./trust.md) - Trust level as a key metric
 - [Agent Model](./agent-model.md) - Spec review agent as post-session quality check
 
 ## Review
@@ -258,8 +248,6 @@ See [trust.md](./trust.md) for how trust is tracked and calculated.
 **Stale status line.** The status says "gating rules depend on spec-lifecycle (still a stub)" but spec-lifecycle is now Solid. The README also says "blocked on spec-lifecycle." Both should be updated.
 
 **This spec describes a different thing than the others.** Every other spec describes a conversation-based workflow using Claude Code and markdown files. This spec describes a built application with a database, entities, dashboards, and drill-down views. The opening paragraph acknowledges this ("this spec describes the built system"), but the gap is significant. The data model (Assumption, Experiment, Evidence, Learning) is a fully relational schema — far more structured than anything else in the spec set. Worth being explicit about when this system gets built vs. what happens in the meantime with markdown-based tracking.
-
-**Trust level on dashboard but no trust data model.** The dashboard shows "Trust: Medium" and the spec says it "reads trust data from the trust system." But trust.md has no data model, no calculation method, and is still Draft. The observability dashboard is designed around a dependency that doesn't exist yet.
 
 **Gating trigger gap with learning-loop.** Learning-loop's Spec Update Protocol step 4 references observability gating, but the gating rules here only define two triggers: draft → ready transitions and implementation planning. Learnings flowing back to specs during interactive sessions isn't covered. If gating should fire there too, it needs to be defined.
 
