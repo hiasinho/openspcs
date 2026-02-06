@@ -79,7 +79,7 @@ The following remain open and need future sessions:
 - **Command/invocation naming**: /spec, /define, etc. - not chosen
 - **Detailed interview flow**: Specific questions, phases, transitions not fully mapped (loop model provides high-level structure, but specific interview patterns need work)
 - **Spec lifecycle**: States and transitions stubbed but not defined (see `specs/spec-lifecycle.md`)
-- **Agent model**: Multiple specs reference "the agent" but no spec defines what the agent is as a system component
+- **Agent model**: Now defined in `specs/agent-model.md` — CC in interactive + headless modes, utility agents, supervisor pattern, write permissions. Still WIP: triggering, failure handling, model selection.
 
 ## Potential Integration Points
 

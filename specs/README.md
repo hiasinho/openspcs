@@ -13,6 +13,7 @@ Design documentation for OpenSpcs, a conversational specification creation tool 
 | [learning-loop](./learning-loop.md) | Feedback cycle - build produces evidence, learnings flow back to spec updates |
 | [observability](./observability.md) | Tracking layer and dashboard - 4 entities (Assumption, Experiment, Evidence, Learning), gating rules, metrics |
 | [trust](./trust.md) | Autonomy gradient - how trust builds from high friction toward YOLO mode |
+| [agent-model](./agent-model.md) | What "the agent" is - CC in two modes (interactive + headless), utility agents, supervisor pattern |
 | [spec-lifecycle](./spec-lifecycle.md) | **Stub** - Spec states and transitions (draft → ready → planning → building → validating) |
 
 ## Status
