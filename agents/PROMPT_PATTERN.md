@@ -6,11 +6,13 @@ Agent prompts follow a consistent structure with three zones. Claude weights sta
 
 ### Orientation (0.)
 
-What the agent should study before doing any work. Use sub-labels (0a, 0b, 0c) for multiple study targets. The word "study" is intentional — it means read and internalize, not skim.
+What the agent should study before doing any work. Use sub-labels (0a, 0b, 0c) for multiple study targets. The word "study" is intentional — it means read and internalize, not skim. Always use "study," whether the input is specs, code, docs, or anything else.
+
+When studying `specs/*`, always use up to 250 parallel Sonnet subagents. Specs are the shared medium between agents — studying them thoroughly and in parallel is worth the cost.
 
 ```
-0a. Study [primary input].
-0b. Study [related context].
+0a. Study `specs/*` with up to 250 parallel Sonnet subagents to understand the full specification landscape.
+0b. Study [other input].
 0c. For reference, [additional context].
 ```
 

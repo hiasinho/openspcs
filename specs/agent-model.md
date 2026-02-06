@@ -1,6 +1,6 @@
 # Agent Model
 
-**Status**: Solid — two modes defined, one debrief agent, write boundary clear
+**Status**: Solid — two modes defined, one spec review agent, write boundary clear
 
 ## Core Idea
 
@@ -32,29 +32,26 @@ Claude Code invoked with `claude -p`. No human interaction. A script pipes a pro
 
 ## Headless Agents
 
-### Debrief Agent
+### Spec Review Agent
 
-One agent, one job: after a speccing session, read all specs and produce a debrief for the next session.
+One agent, one job: after a speccing session, read all specs and write review notes back into them.
 
-Pattern: `agents/debrief.sh` + `agents/prompts/debrief.md` — shell script pipes a prompt to `claude -p`, agent reads all specs, writes `tracking/debrief.md`.
+Pattern: `agents/spec-review.sh` + `agents/prompts/spec-review.md` — shell script pipes a prompt to `claude -p`, agent reads all specs, writes a `## Review` section at the bottom of each spec.
 
-The debrief covers:
-- What's in good shape
-- What's not — contradictions, gaps, issues, in one prioritized list
-- Suggested focus for next session
+The review captures what a holistic read reveals — issues within a spec, contradictions with other specs, gaps, staleness. Each spec gets its own review notes. The agent overwrites the Review section each run.
 
-That's it. No separate agents for assumptions, gaps, contradictions, consistency. One holistic read, one file.
+This is agent-to-agent context. The next interactive session reads the specs and the review is right there. No separate file to coordinate.
 
 ## Post-Session Flow
 
 ```
 Interactive session (human + CC)
     ↓ session ends
-Debrief agent (headless)
+Spec review agent (headless)
     ↓
-tracking/debrief.md
+## Review section in each spec
     ↓
-Next interactive session (informed by debrief)
+Next interactive session (reads specs with review notes already there)
 ```
 
 ## Write Permissions
@@ -65,18 +62,18 @@ Headless agents never touch specs. They write tracking data only.
 
 | Target | Who writes | Context |
 |--------|-----------|---------|
-| Specs | Interactive Claude Code | Human present, collaborative — this is the conversation |
-| Tracking data (debrief, reports) | Headless agents | Post-session analysis, no human needed |
+| Spec content | Interactive Claude Code | Human present, collaborative — this is the conversation |
+| Spec review notes (`## Review`) | Spec review agent (headless) | Post-session annotation, no human needed |
 
-This is a clear boundary, not a trust gradient. Interactive sessions produce specs. Headless agents produce analysis.
+The boundary is content vs. annotation. Interactive sessions shape spec content. The review agent writes review notes — metadata about the spec, not the spec itself.
 
 ## Relationship to Ralph Phases
 
 ```
 Phase 1: Define Requirements (this is where OpenSpcs lives)
 ├── Interactive: speccing sessions (human + CC)
-├── Headless: debrief agent
-└── Output: specs + debrief
+├── Headless: spec review agent
+└── Output: specs (with review notes)
 
 Phase 2: Planning
 ├── Headless: implementation planning agent
@@ -91,11 +88,12 @@ All three phases use the same underlying mechanism — Claude Code, interactive 
 
 ## Open Questions
 
-- How does the post-session debrief get triggered? Manually by the user, or automatically?
-- Which model should the debrief agent use?
+- How does the spec review get triggered? Manually by the user, or automatically?
+- Which model should the spec review agent use?
 
 ## Related
 
 - [Core](./core.md) — What the interactive session produces
+- [Spec Lifecycle](./spec-lifecycle.md) — Draft ⇄ ready, review agent's role in transitions
 - [Loop Model](./loop-model.md) — Spec creation as conversation, learning as loop
 - [Learning Loop](./learning-loop.md) — How evidence flows back from building

@@ -121,7 +121,7 @@ When learnings flow back to specs:
    - Assumption refuted → update spec to reflect reality
    - New assumption discovered → add to spec with low evidence
    - Scope change → flag for human decision
-4. **Apply backpressure** - Updated spec must still pass quality gates
+4. **Check for blind spots** - Any high-importance assumptions without evidence? (see [observability](./observability.md) gating)
 5. **Update readiness** - Re-evaluate what's ready for next phase
 
 ## Integration with Other Specs
@@ -129,8 +129,8 @@ When learnings flow back to specs:
 | Spec | How it connects |
 |------|-----------------|
 | **Assumption Validation** | Provides the framework for what to test and how to prioritize |
-| **Spec Backpressure** | Quality gates that updated specs must pass |
-| **Spec Loop Model** | How spec updates happen (autonomous vs interview mode) |
+| **Observability** | Gating rules that flag blind spots before handoff |
+| **Spec Loop Model** | How spec updates happen (in conversation) |
 | **OpenSpcs Core** | The overall tool that orchestrates this |
 
 ## Example Flow
@@ -168,5 +168,5 @@ When learnings flow back to specs:
 ## Related
 
 - [Assumptions](./assumptions.md) - What to test and how to prioritize
-- [Backpressure](./backpressure.md) - Quality gates for updated specs
+- [Observability](./observability.md) - Gating rules for blind spots
 - [Loop Model](./loop-model.md) - How updates happen in the spec phase

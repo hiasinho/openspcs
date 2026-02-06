@@ -240,7 +240,7 @@ See [trust.md](./trust.md) for how trust is tracked and calculated.
 | **Assumption Validation** | Assumption count, status, area breakdown, blind spots |
 | **Learning Loop** | Learnings captured, applied, velocity |
 | **Trust Model** | Trust level displayed, sourced from trust system (see [trust.md](./trust.md)) |
-| **Spec Backpressure** | Which quality gates are passing/failing |
+| **Spec Review** | Post-session review notes written into each spec |
 
 ## Open Questions
 
@@ -251,4 +251,4 @@ See [trust.md](./trust.md) for how trust is tracked and calculated.
 - [Assumptions](./assumptions.md) - Source of assumption data
 - [Learning Loop](./learning-loop.md) - Source of learning data
 - [Trust](./trust.md) - Trust level as a key metric
-- [Backpressure](./backpressure.md) - Quality gates to display
+- [Agent Model](./agent-model.md) - Spec review agent as post-session quality check

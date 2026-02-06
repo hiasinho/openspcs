@@ -134,4 +134,4 @@ This turns specs from "build instructions" into "investment theses with validati
 ## Related
 
 - [Loop Model](./loop-model.md) - Assumption validation as part of the loop
-- [Backpressure](./backpressure.md) - Validated assumptions as a quality gate
+- [Observability](./observability.md) - Gating rules for unvalidated assumptions
