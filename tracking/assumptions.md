@@ -72,8 +72,9 @@ Each assumption is a belief the design depends on. If false, the design breaks �
 | **Statement** | Claude Code running headless can: (a) load all necessary context from files without persistent memory, (b) produce reliable single-purpose outputs, (c) be orchestrated by shell scripts, and (d) be composed — including a supervisor agent invoking other headless agents. |
 | **Area** | Feasibility |
 | **Importance** | 9 |
+| **Status** | testing |
 | **Sources** | agent-model.md |
-| **Evidence** | — |
+| **Evidence** | **Supports (strength 4/5):** Three headless agents (spec-check, extract-assumptions, gap-analysis) have been built, run, and produced real output. `extract-assumptions` read all spec files and wrote `tracking/assumptions.md` (14 well-categorized assumptions). `gap-analysis` read all specs and wrote `tracking/findings.md` (12 cross-spec gaps). `spec-check` surfaced finding E001 that led to `spec-lifecycle.md` creation. All three use the `cat prompt | claude -p --allowedTools` pattern with shell scripts. This validates parts (a), (b), and (c) of the statement. **Not yet tested:** Part (d) — supervisor agent composing other headless agents — has not been attempted. |
 | **Notes** | The entire post-session automation flow depends on this. If headless agents can't reconstruct context from files, or if shell orchestration is too brittle, or if meta-orchestration (supervisor calling utility agents) doesn't work, the whole autonomous half of the system fails. Each headless invocation must be stateless yet effective. |
 
 ---
@@ -86,7 +87,7 @@ Each assumption is a belief the design depends on. If false, the design breaks �
 | **Area** | Feasibility |
 | **Importance** | 9 |
 | **Sources** | observability.md, agent-model.md, learning-loop.md |
-| **Evidence** | — |
+| **Evidence** | **Supports (strength 3/5):** The separation is working in practice during the spec phase. Headless agents write freely to `tracking/` (assumptions.md, findings.md) while specs in `specs/` go through human review — the write permission boundary from agent-model.md is operational. The agent-model write permissions table enforces this, and the current workflow demonstrates it. **Caveat:** This only validates one-directional flow (agents → tracking data). The harder part — bidirectional sync where learnings flow back to update specs — hasn't been tested because no build phase has produced learnings yet. |
 | **Notes** | The observability data model, agent write permissions, and learning loop all depend on this separation. The contract requires the agent to keep both in sync — if bidirectional sync fails, data diverges (tracking says "validated" but spec doesn't reflect it). Also covers the clean boundary between metadata (agent-writable) and decisions (human-writable). |
 
 ---
@@ -164,7 +165,7 @@ Each assumption is a belief the design depends on. If false, the design breaks �
 | **Area** | Feasibility |
 | **Importance** | 8 |
 | **Sources** | core.md, backpressure.md, agent-model.md |
-| **Evidence** | — |
+| **Evidence** | **Supports (strength 3/5):** The current markdown specs serve both audiences to a degree. LLM-based agents (spec-check, extract-assumptions, gap-analysis) successfully consume the same markdown files that humans read and edit interactively. The extract-assumptions agent parsed spec prose to identify 14 assumptions; gap-analysis found 12 cross-spec gaps — both requiring meaningful comprehension of human-written content. **Limits:** Gap analysis G01 flags that no spec template/format is defined, meaning deterministic backpressure checks (structure validation, missing sections) cannot work yet. The dual-audience property holds for LLM consumption but not for rule-based/deterministic parsing. |
 | **Notes** | If optimizing for human readability makes specs unparseable, automated backpressure fails. If optimizing for machine consumption makes specs hard for humans to edit, adoption fails. Deterministic backpressure checks require parseable structure. The downstream consumer (Ralph planning mode) must be able to meaningfully consume what OpenSpcs produces. |
 
 ---
@@ -203,7 +204,7 @@ Each assumption is a belief the design depends on. If false, the design breaks �
 | A02 | Agent distinguishes "figure out" from "ask human" | F | 10 | open |
 | A03 | Users want spec-first conversational workflow | D | 10 | open |
 | A04 | LLM adapts interview style to clarity level | F | 9 | open |
-| A05 | Claude Code headless supports agent architecture | F | 9 | open |
+| A05 | Claude Code headless supports agent architecture | F | 9 | testing |
 | A06 | Specs and tracking data work as separate concerns | F | 9 | open |
 | A07 | Learning loop closes: evidence → assumptions → specs | F | 9 | open |
 | A08 | Trust builds incrementally, users want progressive autonomy | D | 8 | open |
@@ -215,4 +216,4 @@ Each assumption is a belief the design depends on. If false, the design breaks �
 | A14 | LLM assesses spec readiness for handoff | F | 8 | open |
 
 **By area**: Feasibility: 9 | Desirability: 4 | Viability: 1
-**All status**: open (no evidence collected yet)
+**Status breakdown**: testing: 1 (A05) | open: 13 | Evidence added (status unchanged): A06, A12

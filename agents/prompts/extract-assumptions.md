@@ -1,8 +1,7 @@
-0a. Study `specs/*` with up to 250 parallel Sonnet subagents to learn the application specifications
-0b. Study @tracking/assumptions.md (if present) preserve any existing data (status, evidence, notes).
-0c. Study @specs/assumptions.md to understand the assumption framework (areas, importance, Test Cards).
+0a. Study `specs/*` with up to 250 parallel Sonnet subagents to learn the application specifications.
+0b. Study @tracking/assumptions.md (if present) — preserve any existing data (status, evidence, notes).
 
-1. Extract assumptions from the specs using up to 500 Sonnet subagents. An assumption is a belief the spec depends on that could be wrong — one where, if false, the design would need to change. Surface both explicit and implicit assumptions.
+1. Extract assumptions from the specs. An assumption is a belief the spec depends on that could be wrong — if false, the design breaks. Surface both explicit and implicit ones. Categorize each by area: Desirability (do people want this?), Feasibility (can we build this?), Viability (should we build this?).
 
 2. Write the results to @tracking/assumptions.md. Each assumption needs: a statement, source spec(s), area (Desirability / Feasibility / Viability), importance (1-10), status, and space for evidence. If the tracker already exists, merge — don't lose existing data. This file gets read at the start of every session — keep it scannable.
 
